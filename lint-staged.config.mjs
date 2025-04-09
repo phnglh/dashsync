@@ -1,11 +1,12 @@
+// lint-staged.config.mjs
 export default {
     'apps/web/**/*.{js,jsx,ts,tsx}': [
-      'pnpm --filter web lint',
-      'pnpm --filter web lint:fix',
+      'cd apps/web && pnpm lint',
+      'cd apps/web && pnpm lint:fix',
     ],
     'apps/api/**/*.py': [
-      'poetry run ruff --fix',
-      'poetry run black',
+      'cd apps/api && poetry run ruff --fix',
+      'cd apps/api && poetry run black .',
     ],
   };
   
